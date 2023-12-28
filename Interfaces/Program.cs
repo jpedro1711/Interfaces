@@ -29,7 +29,9 @@ namespace Interfaces
             Console.WriteLine("Enter price per day:");
             double day = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            RentalService rentalService = new RentalService(hour, day);
+            BrazilTaxService brazilTaxService = new BrazilTaxService(); 
+
+            RentalService rentalService = new RentalService(hour, day, brazilTaxService);
 
             rentalService.ProcessInvoice(rental);
 
